@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini CRM</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <img src="crm-logo.png" alt="CRM Logo" class="logo" />
+    <h1>Mini CRM</h1>
+
+    <form id="customerForm">
+      <input type="text" id="name" placeholder="Name" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="text" id="phone" placeholder="Phone (10 digits)" required />
+      <select id="status" required>
+        <option value="lead">Lead</option>
+        <option value="client">Client</option>
+      </select>
+      <select id="technician" required>
+        <option value="">-- Assign Technician --</option>
+        <option value="Sanjay">Sanjay</option>
+        <option value="Mukesh">Mukesh</option>
+        <option value="Yasir">Yasir</option>
+        <option value="Ankur">Ankur</option>
+        <option value="Aman">Aman</option>
+        <option value="Saini">Saini</option>
+      </select>
+      <textarea id="note" placeholder="Interaction Note"></textarea>
+      <button type="submit">Add Customer</button>
+    </form>
+
+    <div class="filters">
+      <input type="text" id="search" placeholder="Search by name..." />
+      <select id="filterStatus">
+        <option value="all">All</option>
+        <option value="lead">Lead</option>
+        <option value="client">Client</option>
+      </select>
+      <button id="exportBtn">Export to CSV</button>
+    </div>
+
+    <h2>Customer List</h2>
+    <div id="customerList"></div>
+
+    <h2>Dashboard</h2>
+    <canvas id="statusChart" width="400" height="200"></canvas>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
